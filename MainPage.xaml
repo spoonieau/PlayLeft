@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="PlayLeft.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PlayLeft"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
+    mc:Ignorable="d" Width="1980" Height="1080">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="1,18,1479,752" Width="500" Height="310">
+        <CommandBar x:Name="cbTop">
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            <AppBarButton x:Name="abAbout" Label="About" Icon="Help" Click="abAbout_Click"/>
+        </CommandBar>
+        <TextBox x:Name="lblContSelected" HorizontalAlignment="Left" Margin="4,60,0,0" TextWrapping="Wrap" Text="lblContSelected" VerticalAlignment="Top" Width="288" FontSize="24" IsReadOnly="True" BorderThickness="0"/>
+        <TextBox x:Name="lblConnection" HorizontalAlignment="Left" Margin="4,105,0,0" TextWrapping="Wrap" Text="lblConnection" VerticalAlignment="Top" RenderTransformOrigin="0.19,0.109" Width="318" BorderThickness="0"/>
+        <TextBox x:Name="lblBatteryStatus" HorizontalAlignment="Left" Margin="4,142,0,0" TextWrapping="Wrap" Text="lblBatteryStatus" VerticalAlignment="Top" Width="318" BorderThickness="0"/>
+        <TextBox x:Name="lblFullChargeCap" HorizontalAlignment="Left" Margin="4,179,0,0" TextWrapping="Wrap" Text="lblFullChargeCap" VerticalAlignment="Top" Width="318" BorderThickness="0" IsReadOnly="True"/>
+        <TextBox x:Name="lblRemainingCap" HorizontalAlignment="Left" Margin="4,216,0,0" TextWrapping="Wrap" Text="lblRemainingCap" VerticalAlignment="Top" IsReadOnly="True" BorderThickness="0" Width="318"/>
+        <TextBox x:Name="txtPercentage" HorizontalAlignment="Left" Margin="280,105,0,0" TextWrapping="Wrap" Text="100%" VerticalAlignment="Top" Height="111" Width="210" IsReadOnly="True" FontSize="72"/>
+        <TextBox x:Name="lblPercentage" HorizontalAlignment="Left" Margin="280,68,0,0" TextWrapping="Wrap" Text="Percentage Remaining" VerticalAlignment="Top" BorderThickness="0" IsReadOnly="True" FontSize="15" Width="172"/>
+        <UI:AdControl ApplicationId="3f83fe91-d6be-434d-a0ae-7351c5a997f1" AdUnitId="test" Width="320" Height="50" Margin="10,250,170,10"/>
+    </Grid>
+</Page>
