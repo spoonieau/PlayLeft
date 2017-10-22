@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.10
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayLeft", "PlayLeft\PlayLeft.csproj", "{6090FED6-040E-4C94-AD90-4DB4637D6C36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayLeft", "PlayLeft.csproj", "{6090FED6-040E-4C94-AD90-4DB4637D6C36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +38,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9D8B8F5D-0AD9-4964-9793-45BCF22E9D05}
+		SolutionGuid = {DFF34929-0784-46C4-9A3E-C8CD098632D4}
 	EndGlobalSection
 EndGlobal

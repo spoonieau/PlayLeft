@@ -8,11 +8,12 @@ using System;
 using System.Reflection;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Documents;
+using Windows.ApplicationModel.Resources;
 
 
 // The Content Dialog item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-    //About ContentDialog.
+//About ContentDialog.
 namespace PlayLeft
 {
     public sealed partial class About : ContentDialog
@@ -25,9 +26,8 @@ namespace PlayLeft
             this.Title = "PlayLeft " + (typeof(App).GetTypeInfo().Assembly.GetName().Version).ToString();
 
             //Set text of Textbox.
-            tbAbout.Text = "Small application to get the battery level of your Xbox Controller." + Environment.NewLine +
-                "Released under GPL3" + Environment.NewLine + "Developed by Spoonie_au" + Environment.NewLine +
-                "Source available at ";
+            var resourceLoader = ResourceLoader.GetForCurrentView();
+            tbAbout.Text = resourceLoader.GetString("AboutInfo") + " ";
 
             //Add a hyperlink to the end of the text of the Textbox text.
             Hyperlink hyperlink = new Hyperlink();

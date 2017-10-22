@@ -10,5 +10,17 @@
     <SplashScreenSource>F:\projects\PlayLeft\tilebase.png</SplashScreenSource>
     <BadgeLogoSource>F:\projects\PlayLeft\tilebase.png</BadgeLogoSource>
     <PackageLogoSource>F:\projects\PlayLeft\tilebase.png</PackageLogoSource>
+    <AppxShowAllApps>False</AppxShowAllApps>
+    <AppxPackageIsForStore>True</AppxPackageIsForStore>
+    <AppxBuildConfigurationSelection>x86|x64|arm</AppxBuildConfigurationSelection>
+    <PackageOptionalProjectsInIdeBuilds>False</PackageOptionalProjectsInIdeBuilds>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DeviceId>30F105C9-681E-420b-A277-7C086EAD8A4E</DeviceId>
+    <UseEmulator>true</UseEmulator>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <DeviceId>30F105C9-681E-420b-A277-7C086EAD8A4E</DeviceId>
+    <UseEmulator>true</UseEmulator>
   </PropertyGroup>
 </Project>

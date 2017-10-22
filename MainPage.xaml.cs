@@ -11,6 +11,7 @@ using Windows.Gaming.Input;
 using Windows.UI.ViewManagement;
 using Windows.UI.Core;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.Resources;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -33,10 +34,13 @@ namespace PlayLeft
             this.InitializeComponent();
 
             //Set the window size.
-            ApplicationView.PreferredLaunchViewSize = new Size(500, 320);
+            ApplicationView.PreferredLaunchViewSize = new Size(585, 320);
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
 
-            lblContSelected.Text = "No Controller connected.";
+            //Load localized string
+            var resourceLoader = ResourceLoader.GetForCurrentView();
+            lblContSelected.Text = resourceLoader.GetString("NoController");
+
             lblConnection.Text = "";
             lblBatteryStatus.Text = "";
             lblFullChargeCap.Text = "";
@@ -63,7 +67,7 @@ namespace PlayLeft
                         return;
                     }
 
-                    //Can not handle more than one controllers, will support 4 controllers once I can work out how to identify controllers.
+                    //Can not handle more than one controller, will support 4 controllers once I can work out how to identify controllers.
                     if (Gamepad.Gamepads.Count > 1)
                     {
                         return;
@@ -75,7 +79,26 @@ namespace PlayLeft
              
                     //Get battery status.
                     var controllerBatt = _Gamepad.TryGetBatteryReport();
-                    batteryStatus = controllerBatt.Status.ToString();
+
+                    //Get battery state and retreave the correct localization string
+                    var resourceLoader = ResourceLoader.GetForCurrentView();
+                    if (controllerBatt.Status.ToString().Equals("Charging"))
+                    {
+                        batteryStatus = resourceLoader.GetString("BatteryStatusCharging");
+                    }
+                    else if (controllerBatt.Status.ToString().Equals("Discharging"))
+                    {
+                        batteryStatus = resourceLoader.GetString("BatteryStatusDischarging");
+                    }
+                    else if (controllerBatt.Status.ToString().Equals("Idle"))
+                    {
+                        batteryStatus = resourceLoader.GetString("BatteryStatusIdle");
+                    }
+                    else
+                    {
+                        batteryStatus = resourceLoader.GetString("BatteryStatusNotPresent");
+                    }
+
                     fullChargeCap = controllerBatt.FullChargeCapacityInMilliwattHours.ToString();
                     remainingCap = controllerBatt.RemainingCapacityInMilliwattHours.ToString();
 
@@ -91,22 +114,23 @@ namespace PlayLeft
 
         private void fillDetails()
         {
-            lblContSelected.Text = "Controller Connected.";
+            var resourceLoader = ResourceLoader.GetForCurrentView();
+            lblContSelected.Text = resourceLoader.GetString("ControllerConnected");
 
             if (wirelessConnected == true)
             {
-                lblConnection.Text = "Connected via wireless.";
+                lblConnection.Text = resourceLoader.GetString("ConnectedViaWireless");
             }
             else
             {
-                lblConnection.Text = "Connected via charge and play cable";
+                lblConnection.Text = resourceLoader.GetString("ConnectedViaCable");
             }
 
-            lblBatteryStatus.Text = "Battery is " + batteryStatus;
-            lblFullChargeCap.Text = "Full charge capacipty " + fullChargeCap + "mwh";
-            lblRemainingCap.Text = "Remaining charge capacipty " + remainingCap + "mwh";
+            lblBatteryStatus.Text = resourceLoader.GetString("BatteryState") + " " + batteryStatus;
+            lblFullChargeCap.Text = resourceLoader.GetString("FullCapacipty") + " " + fullChargeCap + "mwh";
+            lblRemainingCap.Text = resourceLoader.GetString("RemainingCapacipty") + " " +remainingCap + "mwh";
 
-            //Call calss CalcPercentage and pass the remainingCap and fullChargeCap, will get a percentage as a retuen. 
+            //Call calss CalcPercentage and pass the remainingCap and fullChargeCap, will get a percentage as a return. 
             CalcPercentage calcPercentage = new CalcPercentage();
             txtPercentage.Text = calcPercentage.Percentage(double.Parse(remainingCap), double.Parse(fullChargeCap));
 
@@ -117,9 +141,11 @@ namespace PlayLeft
         {
             _Gamepad = null;
 
+            
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
                                {
-                                   lblContSelected.Text = "No Controler connected.";
+                                   var resourceLoader = ResourceLoader.GetForCurrentView();
+                                   lblContSelected.Text = resourceLoader.GetString("NoController");
                                    lblConnection.Text = "";
                                    lblBatteryStatus.Text = "";
                                    lblFullChargeCap.Text = "";

@@ -4,6 +4,7 @@
  * Released under GPL3, Developed by Spoonie_au.
  */
 
+using Windows.ApplicationModel.Resources;
 using Windows.UI.Notifications;
 
 namespace PlayLeft
@@ -11,38 +12,50 @@ namespace PlayLeft
     class Toasts
     {
         public void addToast()
-        {   
+        {
+            //Load localized string
+            var resourceLoader = ResourceLoader.GetForCurrentView();
+
+            //Contents of addToast
             var templateAdd = "<toast launch=\"app-defined-string\">" +
                               "<visual>" +
                               "<binding template =\"ToastGeneric\">" +
-                              "<text>PlayLeft</text>" +
-                              "<text>Controller Connected.</text>" +
+                              "<text>" + resourceLoader.GetString("AppDisplayName") + "</text>" +
+                              "<text>" + resourceLoader.GetString("ControllerConnected") + "</text>" +
                               "</binding>" +
                               "</visual>" +
-                              "</toast>"; 
+                              "</toast>";
 
+            //Create and show Toast
             var xmlAddToast = new Windows.Data.Xml.Dom.XmlDocument();
             xmlAddToast.LoadXml(templateAdd);
 
             var showAddToast = new ToastNotification(xmlAddToast);
             var toast = ToastNotificationManager.CreateToastNotifier();
 
+
             toast.Show(showAddToast);
-            
+
 
         }
 
         public void removeToast()
         {
+            //Load localized string
+            var resourceLoader = ResourceLoader.GetForCurrentView();
+
+
+            //Contents of RemoveToast
             var templateRemove = "<toast launch=\"app-defined-string\">" +
                                  "<visual>" +
                                  "<binding template =\"ToastGeneric\">" +
-                                 "<text>PlayLeft</text>" +
-                                 "<text>Controller Disconnected.</text>" +
+                                 "<text>"+ resourceLoader.GetString("AppDisplayName") + "</text>" +
+                                 "<text>" + resourceLoader.GetString("ControllerDisconnected") + "</text>" +
                                  "</binding>" +
                                  "</visual>" +
                                  "</toast>";
 
+            //Create and show Toast
             var xmlRemoveToast = new Windows.Data.Xml.Dom.XmlDocument();
             xmlRemoveToast.LoadXml(templateRemove);
 
