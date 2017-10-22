@@ -5,6 +5,14 @@ Was created to play around with how UWP and the windows store works.
 Please submit issiues when they come up.
 
 ChangeLog
-1.0.0.0
+
+1.3
+Code clean up's
+Localization support for cs-CZ, da-DK, de-DE, en-US, it-IT, ja-JP, ko-KR, pl-PL
+Updated Target Version to Fall Creators Update.
+
+Some of the translations will be incorrect, just working from Google Translate.
+
+1.0
 Initial release
 
