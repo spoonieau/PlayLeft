@@ -22,6 +22,6 @@
         <TextBox x:Name="lblRemainingCap" HorizontalAlignment="Left" Margin="4,216,0,0" TextWrapping="Wrap" Text="lblRemainingCap" VerticalAlignment="Top" IsReadOnly="True" BorderThickness="0" Width="318"/>
         <TextBox x:Name="txtPercentage" HorizontalAlignment="Left" Margin="361,137,0,0" TextWrapping="Wrap" Text="100%" VerticalAlignment="Top" Height="111" Width="210" IsReadOnly="True" FontSize="72"/>
         <TextBox x:Name="lblPercentage" HorizontalAlignment="Left" Margin="351,107,0,0" TextWrapping="Wrap" x:Uid="PercentageRemaining" VerticalAlignment="Top" BorderThickness="0" IsReadOnly="True" FontSize="15" Width="176"/>
-        <UI:AdControl ApplicationId="9nss2jdkrlf8" AdUnitId="356375" Width="320" Height="50" Margin="14,250,266,10" RenderTransformOrigin="0.259,0.46"/>
+        <UI:AdControl ApplicationId="3f83fe91-d6be-434d-a0ae-7351c5a997f1" AdUnitId="test" Width="320" Height="50" Margin="14,250,266,10" RenderTransformOrigin="0.259,0.46"/>
     </Grid>
 </Page>
