@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About.Label" xml:space="preserve">
-    <value>Attorno</value>
+    <value>Informazioni</value>
     <comment>About</comment>
   </data>
   <data name="AboutInfo" xml:space="preserve">
     <value>Piccola applicazione per ottenere il livello della batteria del controller Xbox.
 Rilasciato sotto GPL 3, sviluppato da Spoonie Au.
-Fonte disponibile a</value>
+Sorgenti disponibili su</value>
     <comment>About Info</comment>
   </data>
   <data name="AppDisplayName" xml:space="preserve">
@@ -136,15 +136,15 @@ Fonte disponibile a</value>
     <comment>Battery is</comment>
   </data>
   <data name="BatteryStatusCharging" xml:space="preserve">
-    <value>Ricarica</value>
+    <value>In ricarica</value>
     <comment>Battery is charging</comment>
   </data>
   <data name="BatteryStatusDischarging" xml:space="preserve">
-    <value>Scarico</value>
+    <value>In scaricamento</value>
     <comment>Battery is discharging</comment>
   </data>
   <data name="BatteryStatusIdle" xml:space="preserve">
-    <value>Inattivo</value>
+    <value>Inattiva</value>
     <comment>Battery is Idle</comment>
   </data>
   <data name="BatteryStatusNotPresent" xml:space="preserve">
@@ -160,11 +160,11 @@ Fonte disponibile a</value>
     <comment>Connected via wireless.</comment>
   </data>
   <data name="ControllerConnected" xml:space="preserve">
-    <value>Controllore Collegato.</value>
+    <value>Controller Collegato.</value>
     <comment>Controller Connected.</comment>
   </data>
   <data name="ControllerDisconnected" xml:space="preserve">
-    <value>Controllore Scollegato</value>
+    <value>Controller Scollegato</value>
     <comment>Controller Disconnected.</comment>
   </data>
   <data name="Description" xml:space="preserve">
@@ -176,7 +176,7 @@ Fonte disponibile a</value>
     <comment>Full charge capacipty</comment>
   </data>
   <data name="NoController" xml:space="preserve">
-    <value>Nessun controllore collegato.</value>
+    <value>Nessun controller collegato.</value>
     <comment>No Controller connected.</comment>
   </data>
   <data name="PercentageRemaining.Text" xml:space="preserve">
@@ -184,7 +184,7 @@ Fonte disponibile a</value>
     <comment>Label Percentage Remaining</comment>
   </data>
   <data name="RemainingCapacipty" xml:space="preserve">
-    <value>Carica rimanente capacipty</value>
+    <value>Capacità di carica rimanente</value>
     <comment>Remaining charge capacipty</comment>
   </data>
 </root>
