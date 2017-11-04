@@ -4,7 +4,12 @@ Was created to play around with how UWP and the windows store works.
 
 Please submit issiues when they come up.
 
-ChangeLog
+##ChangeLog
+
+1.4
+it-IT localization fixes provided by Hexaae https://github.com/Hexaae
+May have fix crash STOWED_EXCEPTION_System.NullReferenceException and 
+STOWED_EXCEPTION_System.InvalidCastException. Needs testing.
 
 1.3
 Code clean up's

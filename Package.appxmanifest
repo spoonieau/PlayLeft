@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="2227System86.PlayLeft" Publisher="CN=B8A6AD91-7058-46D6-AE53-2E281625D54B" Version="1.3.0.0" />
+  <Identity Name="2227System86.PlayLeft" Publisher="CN=B8A6AD91-7058-46D6-AE53-2E281625D54B" Version="1.4.0.0" />
   <mp:PhoneIdentity PhoneProductId="173b9636-ffb3-4246-986c-1a4e5043ae8e" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>PlayLeft</DisplayName>

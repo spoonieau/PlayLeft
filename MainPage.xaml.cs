@@ -142,18 +142,28 @@ namespace PlayLeft
             _Gamepad = null;
 
             
+            
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
                                {
-                                   var resourceLoader = ResourceLoader.GetForCurrentView();
-                                   lblContSelected.Text = resourceLoader.GetString("NoController");
-                                   lblConnection.Text = "";
-                                   lblBatteryStatus.Text = "";
-                                   lblFullChargeCap.Text = "";
-                                   lblRemainingCap.Text = "";
-                                   txtPercentage.Text = "";
+                                   // If gamepad count is larger than one, do noting.will support 4 controllers once I can work out how to identify controllers.
+                                   if (Gamepad.Gamepads.Count > 1)
+                                   {
+                                       return;
+                                   }
+                                   else if (Gamepad.Gamepads.Count == 0)
+                                       { 
+                                       var resourceLoader = ResourceLoader.GetForCurrentView();
+                                       lblContSelected.Text = resourceLoader.GetString("NoController");
+                                       lblConnection.Text = "";
+                                       lblBatteryStatus.Text = "";
+                                       lblFullChargeCap.Text = "";
+                                       lblRemainingCap.Text = "";
+                                       txtPercentage.Text = "";
 
-                                   Toasts disconnectToast = new Toasts();
-                                   disconnectToast.removeToast();
+                                       Toasts disconnectToast = new Toasts();
+                                       disconnectToast.removeToast();
+                                   }
+
                                });
         }
 
